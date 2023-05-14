@@ -1,0 +1,35 @@
+[0;1;32m●[0m smbd.service - Samba SMB Daemon
+     Loaded: loaded (/lib/systemd/system/smbd.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Sat 2023-05-13 19:06:46 AEST; 5min ago
+       Docs: man:smbd(8)
+             man:samba(7)
+             man:smb.conf(5)
+    Process: 1118421 ExecStartPre=/usr/share/samba/update-apparmor-samba-profile (code=exited, status=0/SUCCESS)
+   Main PID: 1118430 (smbd)
+     Status: "smbd: ready to serve connections..."
+      Tasks: 4 (limit: 8732)
+     Memory: 12.2M
+     CGroup: /system.slice/smbd.service
+             ├─1118430 /usr/sbin/smbd --foreground --no-process-group
+             ├─1118432 /usr/sbin/smbd --foreground --no-process-group
+             ├─1118433 /usr/sbin/smbd --foreground --no-process-group
+             └─1118434 /usr/lib/x86_64-linux-gnu/samba/samba-bgqd --ready-signal-fd=45 --parent-watch-fd=11 --debuglevel=0 -F
+
+May 13 19:06:46 craig-ThinkPad-T460s systemd[1]: Starting Samba SMB Daemon...
+May 13 19:06:46 craig-ThinkPad-T460s systemd[1]: Started Samba SMB Daemon.
+
+[0;1;32m●[0m nmbd.service - Samba NMB Daemon
+     Loaded: loaded (/lib/systemd/system/nmbd.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Sat 2023-05-13 14:20:10 AEST; 4h 51min ago
+       Docs: man:nmbd(8)
+             man:samba(7)
+             man:smb.conf(5)
+   Main PID: 1102163 (nmbd)
+     Status: "nmbd: ready to serve connections..."
+      Tasks: 1 (limit: 8732)
+     Memory: 3.7M
+     CGroup: /system.slice/nmbd.service
+             └─1102163 /usr/sbin/nmbd --foreground --no-process-group
+
+May 13 14:20:10 craig-ThinkPad-T460s systemd[1]: Starting Samba NMB Daemon...
+May 13 14:20:10 craig-ThinkPad-T460s systemd[1]: Started Samba NMB Daemon.
